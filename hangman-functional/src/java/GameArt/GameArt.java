@@ -11,7 +11,6 @@ public class GameArt {
     public GameArt()
     {
         gameArtList = initializeGameArt();
-
     }
 
     private ArrayList<ArrayList<String>> initializeGameArt()
