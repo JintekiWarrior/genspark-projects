@@ -23,7 +23,7 @@ public class GuessWord {
         mainWordList = generateMainWordList();
 
         missedLettersList = new ArrayList<>();
-        missedLetters = "Missed Letters: ";
+        missedLetters = "Missed Letters:";
     }
 
     // generates a list containing each letter as an element
@@ -55,7 +55,7 @@ public class GuessWord {
 
     public void setMissedLetters(String letter)
     {
-        missedLetters += letter + " ";
+        missedLetters += " " + letter;
         missedLettersList.add("letter");
     }
 
