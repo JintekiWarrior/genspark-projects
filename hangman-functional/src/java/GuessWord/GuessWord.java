@@ -13,13 +13,20 @@ public class GuessWord {
     private final ArrayList<String> wordList;
     private ArrayList<String> mainWordList;
 
+    private ArrayList<String> missedLettersList;
+    private String missedLetters;
+
     public GuessWord(String word)
     {
         this.word = word;
         wordList = generateWordList();
-        mainWordList = generateEmptyWordList();
+        mainWordList = generateMainWordList();
+
+        missedLettersList = new ArrayList<>();
+        missedLetters = "Missed Letters: ";
     }
 
+    // generates a list containing each letter as an element
     private ArrayList<String> generateWordList()
     {
         ArrayList<String> wordList;
@@ -28,14 +35,16 @@ public class GuessWord {
         return wordList;
     }
 
-    private ArrayList<String> generateEmptyWordList()
+    // generate an empty space for each character the word has
+    private ArrayList<String> generateMainWordList()
     {
         ArrayList<String> mainWordList = new ArrayList<>();
         wordList.stream().forEach(item -> mainWordList.add("_"));
         return mainWordList;
     }
 
-    private void setMainWordList(String letter)
+    // sets the main word list which is what will be updated, joined, and displayed to the user
+    public void setMainWordList(String letter)
     {
         if (wordList.contains(letter))
         {
@@ -44,8 +53,35 @@ public class GuessWord {
         } else System.out.println("Error no letter contained in list");
     }
 
-    public String getMainWordList()
+    public void setMissedLetters(String letter)
     {
-        return mainWordList.stream().collect(Collectors.joining(""));
+        missedLetters += letter + " ";
+        missedLettersList.add("letter");
     }
+
+    public String getMainWord()
+    {
+        return mainWordList.stream().collect(Collectors.joining(" "));
+    }
+
+    public String getMissedLetters()
+    {
+        return missedLetters;
+    }
+
+    public int getMissedLettersListSize()
+    {
+        return missedLettersList.size();
+    }
+
+    public boolean isInMainWord(String letter)
+    {
+        return wordList.contains(letter);
+    }
+
+    public boolean isMissedLettersGreaterThan(int num)
+    {
+        return missedLettersList.size() > num ? true : false;
+    }
+
 }
