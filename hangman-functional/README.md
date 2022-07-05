@@ -1,5 +1,5 @@
 # Functional Hangman
-git status
+
 ## General Information
 This is a hangman console game done in functional programming. 
 - Only the main game loop has a while loop.
@@ -10,6 +10,6 @@ This is a hangman console game done in functional programming.
 
 
 ## Technologies Used
--JDK 18
+- JDK 18
 - JUnit 5
 
