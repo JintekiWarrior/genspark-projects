@@ -1,7 +1,5 @@
 package DataModel;
 
-import User.User;
-
 public class Character
 {
     private String type;
